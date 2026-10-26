@@ -1,0 +1,1 @@
+(() => {function stats(){const p=Products.all(),sales=Sales.all();return{products:p.length,stock:p.reduce((a,x)=>a+(Number(x.stock)||0),0),value:p.reduce((a,x)=>a+(Number(x.stock)||0)*(Number(x.cost)||Number(x.price)||0),0),low:p.filter(x=>Number(x.stock)<Number(x.minStock??5)).length,revenue:sales.reduce((a,x)=>a+(Number(x.total)||0),0)}}window.Dashboard={stats}})();

@@ -1,0 +1,1 @@
+(() => {function log(action,description){const rows=Store.get('activity');rows.unshift({id:Store.id('ACT'),action,description,timestamp:new Date().toISOString()});Store.set('activity',rows.slice(0,300))}function getLogs(){return Store.get('activity')}window.ActivityLog={log,getLogs}})();
